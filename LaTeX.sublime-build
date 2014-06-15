@@ -1,6 +1,18 @@
 {
 	"shell": true,
-	"cmd": ["latexmk $file_name -pdf; open $file_base_name.pdf"],
-	"path": "$PATH:/usr/local/texlive/2013/bin/universal-darwin",
-	"selector": "source.tex"
+	"cmd": ["latexmk $file_name -pdf"],
+	/*"path": "$PATH:/usr/local/texlive/2013/bin/universal-darwin",*/
+	/* You may want to add the latexmk and all the other LaTeX executables to your PATH here */
+	"selector": "source.tex",
+
+	"windows":{
+		"cmd": ["latexmk $file_name -pdf; start $file_base_name.pdf"]
+	},
+	"osx":{
+		"cmd": ["latexmk $file_name -pdf; open $file_base_name.pdf"],
+		"path": "$PATH:/usr/local/texlive/2013/bin/universal-darwin"
+	},
+	"linux":{
+		"cmd": ["latexmk $file_name -pdf; xdg-open $file_base_name.pdf"]
+	}
 }
