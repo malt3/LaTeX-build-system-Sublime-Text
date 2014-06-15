@@ -1,0 +1,6 @@
+{
+	"shell": true,
+	"cmd": ["latexmk $file_name -pdf; open $file_base_name.pdf"],
+	"path": "$PATH:/usr/local/texlive/2013/bin/universal-darwin",
+	"selector": "source.tex"
+}
